@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tengo Card Printing</title>
+
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    
+    <div class="options">
+        <input type="text" id="card-title" placeholder="Title of card">
+        <input type="text" id="card-cost" placeholder="Cost of card">
+        <input type="text" id="card-effect" placeholder="Card effect">
+        <input type="text" id="card-type" placeholder="Type of card">
+        <input type="number" id="card-quantity" placeholder="Quantity"> 
+        <button id="add-cards">Add</button>       
+    </div>
+    <div class="deck">
+        <div class="card">
+            <div class="header">
+                <div class="title"></div>
+                <div class="cost"></div>
+            </div>
+            <div class="body">
+                <div class="effect"></div>
+            </div>
+            <div class="footer">
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+
+</body>
+</html>
