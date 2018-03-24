@@ -3,6 +3,8 @@ html, body, viewport {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .options {
@@ -15,6 +17,8 @@ html, body, viewport {
     width: 57mm;
     border: 0.5px solid gray;
     border-radius: 3mm;
+    display: flex;
+    flex-direction: column
 }
 
 .page {
@@ -30,9 +34,39 @@ html, body, viewport {
 
 .delete {
     position: relative;
-    right: 5px;
-    top: 5px;
+    top: -25px;
     cursor: pointer;
+}
+
+.header {
+    margin: 2rem 1rem;
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.cost {
+    position: relative;
+    font-size: 2rem;
+    top: -10px;
+    left: 10px;
+}
+
+.body {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    border-top: 1px solid gray;
+    padding: 0.5rem
 }
 
 @media print {

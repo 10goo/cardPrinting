@@ -29,14 +29,20 @@ let generateDeck = (array) => {
     // Iterate over cardsArray
     array.forEach((element, index) => {
 
-        // New page after every 9 cards and last card
-        if ( index !== 0 && (index % 9 === 0 || index === array.length - 1) ) {
+        // New page after every 9 cards
+        if ( index !== 0 && (index % 9 === 0) ) {
             let clonePage = page.cloneNode(true);
             document.querySelector('#deck').appendChild(clonePage);
             page.innerHTML ='';
         }
         // Append card to page
-        page.appendChild(generateCard(element.title, element.cost, element.value, element.type));
+        page.appendChild(generateCard(element.title, element.cost, element.effect, element.type));
+        // Insert last page
+        if ( index === array.length - 1 ){
+            let clonePage = page.cloneNode(true);
+            document.querySelector('#deck').appendChild(clonePage);
+        }
+        console.log(index);
     });
     
 }
@@ -44,19 +50,25 @@ let generateDeck = (array) => {
 let generateCard = (title, cost, effect, type) => {
     let card = document.createElement('div');
     card.classList.add('card');
-    card.innerHTML = `
-    <div class="header">
+
+    let header = (title || cost) ? 
+    `<div class="header">
+    <div class="cost">${cost}</div>
         <div class="title">${title}</div>
-        <div class="cost">${cost}</div>
         <div class="delete" onclick="deleteThis(this)">X</div>
-    </div>
+    </div>` : ``;
+
+    let footer = (type) ? 
+    `<div class="footer">
+        ${type}
+    </div>` : ``;
+
+    let body = `
     <div class="body">
         <div class="effect">${effect}</div>
-    </div>
-    <div class="footer">
-        ${type}
-    </div>
-    `;
+    </div>`;
+
+    card.innerHTML = header + body + footer;
     return card;
 }
 
