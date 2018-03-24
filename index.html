@@ -17,20 +17,11 @@
         <input type="text" id="card-effect" placeholder="Card effect">
         <input type="text" id="card-type" placeholder="Type of card">
         <input type="number" id="card-quantity" placeholder="Quantity"> 
-        <button id="add-cards">Add</button>       
+        <button id="add-cards" onclick="addButtonPressed()">Add</button>       
     </div>
-    <div class="deck">
-        <div class="card">
-            <div class="header">
-                <div class="title"></div>
-                <div class="cost"></div>
-            </div>
-            <div class="body">
-                <div class="effect"></div>
-            </div>
-            <div class="footer">
-            </div>
-        </div>
+    
+    <div id="deck">
+
     </div>
 
     <script src="./main.js"></script>
