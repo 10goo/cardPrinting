@@ -7,9 +7,18 @@ html, body, viewport {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.options {
+input, button {
+    font-size: 1.2rem;
+    margin: 0.2rem;
+}
+
+.options-left, .options-right {
     display: flex;
     flex-direction: column;
+}
+
+.options {
+    display: flex;
 }
 
 .card {
@@ -23,13 +32,14 @@ html, body, viewport {
 
 .page {
     width: 210mm;
-    height: 297mm;
+    height: 296.5mm; /*297 pushes #page into new page while @print*/
     border: 0.5px solid gray;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     align-content: center;
+    page-break-after: always;
 }
 
 .delete {

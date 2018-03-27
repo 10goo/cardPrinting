@@ -42,7 +42,6 @@ let generateDeck = (array) => {
             let clonePage = page.cloneNode(true);
             document.querySelector('#deck').appendChild(clonePage);
         }
-        console.log(index);
     });
     
 }
@@ -78,7 +77,13 @@ let addButtonPressed = () => {
 }
 
 let deleteThis = (el) => {
-    console.log(el.parentNode.parentNode);
     let page = el.parentNode.parentNode.parentNode;
+    console.log(el.parentNode.parentNode);
     page.removeChild(el.parentNode.parentNode);
 }
+
+document.addEventListener("keydown", function(e){
+    if (e.which === 13) {
+        addButtonPressed();
+    }
+})
